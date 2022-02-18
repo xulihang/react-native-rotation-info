@@ -11,11 +11,20 @@ npm install react-native-rotation-info
 ## Usage
 
 ```js
-import { multiply } from "react-native-rotation-info";
+import { getRotation, Surface } from "react-native-rotation-info";
 
 // ...
 
-const result = await multiply(3, 7);
+const rotation = await getRotation();
+if (rotation == Surface.ROTATION_0) {
+  console.log(0);
+} else if (rotation == Surface.ROTATION_90) {
+  console.log(90);
+} else if (rotation == Surface.ROTATION_180) {
+  console.log(180);
+} else if (rotation == Surface.ROTATION_270) {
+  console.log(270);
+}
 ```
 
 ## Contributing
