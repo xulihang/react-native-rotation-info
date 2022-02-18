@@ -17,6 +17,13 @@ const RotationInfo = NativeModules.RotationInfo
       }
     );
 
-export function multiply(a: number, b: number): Promise<number> {
-  return RotationInfo.multiply(a, b);
+export enum Surface {
+  ROTATION_0 = 0,
+  ROTATION_90 = 1,
+  ROTATION_180 = 2,
+  ROTATION_270 = 3
+}
+
+export function getRotation(): Promise<number> {
+  return RotationInfo.getRotation();
 }

@@ -23,12 +23,14 @@ public class RotationInfoModule extends ReactContextBaseJavaModule {
     }
 
 
-    // Example method
-    // See https://reactnative.dev/docs/native-modules-android
     @ReactMethod
-    public void multiply(int a, int b, Promise promise) {
-        promise.resolve(a * b);
+    public void getRotation(Promise promise) {
+        try {
+            int rotation = getCurrentActivity().getWindowManager().getDefaultDisplay().getRotation();
+            promise.resolve(rotation);
+        } catch(Exception e) {
+            promise.reject("Error", e);
+        }
     }
 
-    public static native int nativeMultiply(int a, int b);
 }
