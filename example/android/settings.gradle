@@ -1,0 +1,6 @@
+rootProject.name = 'RotationInfoExample'
+apply from: file("../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesSettingsGradle(settings)
+include ':app'
+
+include ':reactnativerotationinfo'
+project(':reactnativerotationinfo').projectDir = new File(rootProject.projectDir, '../../android')
